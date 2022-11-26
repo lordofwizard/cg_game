@@ -33,7 +33,10 @@ void Game::make_window(const char * window_name){
     else{
         // Creation of a surface object..!
         SDL_Surface * surface = make_surface();
-        SDL_FillRect(surface , NULL, SDL_MapRGB( surface->format, 0xFF, 0xFF, 0xFF ));
+        //SDL_FillRect(surface , NULL, SDL_MapRGB( surface->format, 0xFF, 0xFF, 0xFF ));
+        SDL_Surface * temp_surf = NULL;
+        temp_surf = load_png_on_surface("assets/char.bmp");
+        SDL_BlitSurface(temp_surf, NULL, surface, NULL);
         SDL_UpdateWindowSurface(window);
     }
 }
@@ -78,4 +81,17 @@ Game::~Game(){
     */
     SDL_DestroyWindow( window );
     SDL_Quit();
+}
+
+SDL_Surface * Game::load_png_on_surface(const char * path_to_bmp){
+    SDL_Surface * surf = NULL;
+    surf = SDL_LoadBMP(path_to_bmp);
+    if(surf == NULL){
+        std::cout << "Error Loading the image " << path_to_bmp << "Error \n"<< SDL_GetError() << std::endl;
+    }
+    else{
+        std::cout <<std::endl <<  "Image Loaded Successfully" << std::endl;
+        return surf;
+    }
+    return NULL;
 }

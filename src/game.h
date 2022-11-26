@@ -1,5 +1,8 @@
 #include <iostream>
 #include <SDL.h>
+
+
+
 class Game{
 private:
     const int window_width = 600;
@@ -34,4 +37,6 @@ public:
 
     // Destructor kill all objects and free the memory here..
     ~Game();
+
+    SDL_Surface * load_png_on_surface(const char * path_to_bmp);
 };
