@@ -5,8 +5,8 @@
 
 class Game{
 private:
-    const int window_width = 600;
-    const int window_height = 337;
+    const int window_width = 1000;
+    const int window_height = 562;
     const char * name;
     // Making a SDL_Window object
     SDL_Window * window = NULL;

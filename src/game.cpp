@@ -10,9 +10,7 @@ void Game::initializer(){
 
     if(SDL_Init(SDL_INIT_VIDEO) < 0){
         std::cout << "SDL Could not be initialized, \nError"<< SDL_GetError()<< std::endl;
-    }temp_surf = load_png_on_surface("assets/char.bmp");
-        SDL_BlitSurface(temp_surf, NULL, surface, NULL);
-        SDL_UpdateWindowSurface(window);
+    }
     else{
         std::cout << "SDL initialized Successfully";
     }
