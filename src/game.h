@@ -38,5 +38,6 @@ public:
     // Destructor kill all objects and free the memory here..
     ~Game();
 
+    // Loads a bmp image surface when a path_to_bmp is provided
     SDL_Surface * load_png_on_surface(const char * path_to_bmp);
 };
